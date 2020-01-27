@@ -17,4 +17,24 @@ public class ProspectusService {
         return pro;
     }
 
+    public Prospectus deleteProspectus(int prospectusId)
+    {
+        Prospectus pro = new Prospectus();
+        pro.setProspectusId(prospectusId);
+        pro.setFirstName("Dummy Name");
+        pro.setSecondName("Dummy Second Name");
+        pro.setZipCode(55100);
+        return pro;
+    }
+
+    public Prospectus updateProspectus(int prospectusId)
+    {
+        Prospectus pro = new Prospectus();
+        pro.setProspectusId(prospectusId);
+        pro.setFirstName("Dummy Name Update");
+        pro.setSecondName("Dummy Second Name Update");
+        pro.setZipCode(55100);
+        return pro;
+    }
+
 }

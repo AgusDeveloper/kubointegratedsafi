@@ -31,4 +31,19 @@ public class IntegratedSafiController {
 
     }
 
+    @GetMapping("/prospectus/removed")
+    public Prospectus prospectusRemoved(@RequestParam(value = "id") int id)
+    {
+        Prospectus prospectus = prospectusService.deleteProspectus(id);
+        return prospectus;
+    }
+
+    @GetMapping("/prospectus/update")
+    public Prospectus prospectusUpdate(@RequestParam(value = "id") int id)
+    {
+        Prospectus prospectus = prospectusService.updateProspectus(id);
+        return prospectus;
+    }
+
+
 }

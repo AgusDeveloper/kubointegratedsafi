@@ -36,4 +36,27 @@ public class ProspectusServiceAspect {
         System.out.println(" -- " + prospectusId + " " + firstName + " " + secondName + " " + zipCode);
     }
 
+    @Before(value = "execution(* kubo.saficonnection.service.ProspectusService.deleteProspectus(..)) and args(prospectusId)")
+    public void beforeAdviceProspectusRemoved(JoinPoint joinPoint, int prospectusId)
+    {
+        System.out.println(" before delete Prospectus: " + joinPoint.getSignature()  );
+        System.out.println(" -- " + prospectusId + " ");
+    }
+
+    /*@Before(value = "execution(* kubo.saficonnection.service.ProspectusService.update*(..)) and args(prospectusId)")
+    public void beforeAdviceProspectusUpdate(JoinPoint joinPoint, int prospectusId)
+    {
+        System.out.println(" before update Prospectus: " + joinPoint.getSignature()  );
+        System.out.println(" -- " + prospectusId + " ");
+    }*/
+
+    @Pointcut(value= "execution(* kubo.saficonnection.service.ProspectusService.updateProspectus(..) )")
+    protected void updateProspectusPointcut(){}
+
+    @Before(value= "updateProspectusPointcut()")
+    public void beforeAdviceProspectusUpdate(){
+            System.out.println(" before updateProspectus Prospectus: Pointcut "   );
+    }
+
+
 }

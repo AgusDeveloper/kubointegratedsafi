@@ -11,7 +11,7 @@ sourceCompatibility = '1.8'
 
 configurations {
 	developmentOnly
-	runtimeClasspath {
+	runtimeClasspath {99
 		extendsFrom developmentOnly
 	}
 }
